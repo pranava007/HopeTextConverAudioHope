@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Speech Converter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="bg-white shadow-lg rounded-lg p-8 max-w-lg w-full">
+        <h1 class="text-2xl font-bold text-center text-gray-800 mb-6">Text to Speech Converter</h1>
+        <form action="/convert" method="POST" class="flex flex-col gap-4">
+            <textarea name="text" placeholder="Enter text here..." required
+                class="p-3 border border-gray-300 rounded-md w-full focus:ring-2 focus:ring-blue-400"></textarea>
+            <button type="submit"
+                class="bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">Convert to Speech</button>
+        </form>
+        {% if error %}
+            <p class="text-red-500 text-center mt-4">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
